@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="PackedScene" uid="uid://4pqund3nukl7" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://c5j88c01cs16v" path="res://suspicious_daydream.wav" id="2_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://dt435fm8k2snq" path="res://daydreaming_deafening_cacophony.wav" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cgk3l07tythb8" path="res://tileBackground.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c0fyxxgimfj27" path="res://PillarLightTrials.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ddbqaqnwxbidi" path="res://amalgam.tscn" id="6_7mycd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(12, 9)
+
+[node name="Node" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+z_index = 1
+position = Vector2(0, -18)
+platform_wall_layers = 1
+safe_margin = 2.719
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+visibility_layer = 3
+z_index = 1
+zoom = Vector2(3, 3)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="SuspiciousDaydream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0xm2m")
+autoplay = true
+
+[node name="DaydreamingDeafeningCacophony" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_h2yge")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(-20, 34)
+collision_enabled = false
+
+[node name="TileMapLayer2" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(-17, 39)
+
+[node name="Label" type="Label" parent="."]
+top_level = true
+z_index = 4
+y_sort_enabled = true
+anchors_preset = -1
+anchor_top = -0.027
+anchor_bottom = -0.027
+offset_left = -498.0
+offset_top = -366.504
+offset_right = 508.0
+offset_bottom = 82.496
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "SACRIFICES WILL BE MADE."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 0
+justification_flags = 0
+
+[node name="Pillar" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-59, -62)
+
+[node name="Node2D" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(1, 12)

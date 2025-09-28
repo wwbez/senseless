@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwsnqh3pxm0ih"]
+
+[ext_resource type="Script" uid="uid://c7m3ihv4c3sqr" path="res://canvas_layer.gd" id="1_scnk2"]
+[ext_resource type="Shader" uid="uid://b18nr4b0x7vxu" path="res://spotlight.gdshader" id="2_lfkdj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6g0u"]
+resource_name = "eee"
+shader = ExtResource("2_lfkdj")
+
+[node name="spotlight" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_scnk2")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_b6g0u")
+offset_left = -112229.0
+offset_top = -77052.0
+offset_right = 116405.0
+offset_bottom = 48398.0
+color = Color(0, 0, 0, 0.972549)

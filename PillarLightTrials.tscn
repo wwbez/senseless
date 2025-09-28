@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0fyxxgimfj27"]
+
+[ext_resource type="Texture2D" uid="uid://biiqtsi3hcy1t" path="res://pillarstuff.png" id="1_0qg1o"]
+[ext_resource type="Script" uid="uid://by6fjj2tee48l" path="res://pillar_light_trials.gd" id="1_fcqkt"]
+[ext_resource type="Script" uid="uid://cgk2g7mxwmj4b" path="res://pillar_1.gd" id="1_tmbiy"]
+[ext_resource type="Script" uid="uid://ohyeqrmh3fh" path="res://pillar_b_1.gd" id="3_tmbiy"]
+[ext_resource type="Script" uid="uid://0sqw14pqup35" path="res://pillar_c_1.gd" id="4_dgacj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmbiy"]
+radius = 18.5
+
+[sub_resource type="Environment" id="Environment_mm6p8"]
+glow_enabled = true
+glow_intensity = 8.0
+glow_strength = 2.0
+glow_bloom = 1.0
+glow_hdr_threshold = 4.0
+glow_hdr_scale = 4.0
+glow_hdr_luminance_cap = 256.0
+
+[node name="Pillar" type="Node2D"]
+script = ExtResource("1_fcqkt")
+
+[node name="PillarA1" type="Node2D" parent="."]
+position = Vector2(56, -41)
+script = ExtResource("1_tmbiy")
+
+[node name="ActivationArea" type="Area2D" parent="PillarA1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PillarA1/ActivationArea"]
+shape = SubResource("CircleShape2D_tmbiy")
+
+[node name="BaseSprite" type="Sprite2D" parent="PillarA1"]
+texture_repeat = 1
+texture = ExtResource("1_0qg1o")
+
+[node name="Glow" type="PointLight2D" parent="PillarA1/BaseSprite"]
+top_level = true
+light_mask = 513
+visibility_layer = 513
+position = Vector2(176.00002, 0)
+scale = Vector2(37, 37)
+energy = 33.85
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="PillarA1"]
+environment = SubResource("Environment_mm6p8")
+
+[node name="PillarB1" type="Node2D" parent="."]
+position = Vector2(112, 0)
+script = ExtResource("3_tmbiy")
+
+[node name="BaseSprite2" type="Sprite2D" parent="PillarB1"]
+texture_repeat = 1
+texture = ExtResource("1_0qg1o")
+
+[node name="Glow" type="PointLight2D" parent="PillarB1/BaseSprite2"]
+top_level = true
+light_mask = 513
+visibility_layer = 513
+position = Vector2(176.00002, 0)
+scale = Vector2(37, 37)
+energy = 33.85
+
+[node name="ActivationArea2" type="Area2D" parent="PillarB1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PillarB1/ActivationArea2"]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_tmbiy")
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="PillarB1"]
+environment = SubResource("Environment_mm6p8")
+
+[node name="PillarC1" type="Node2D" parent="."]
+position = Vector2(0, 1)
+script = ExtResource("4_dgacj")
+
+[node name="BaseSprite3" type="Sprite2D" parent="PillarC1"]
+texture_repeat = 1
+texture = ExtResource("1_0qg1o")
+
+[node name="Glow" type="PointLight2D" parent="PillarC1/BaseSprite3"]
+top_level = true
+light_mask = 513
+visibility_layer = 513
+position = Vector2(176.00002, 0)
+scale = Vector2(37, 37)
+energy = 33.85
+
+[node name="ActivationArea3" type="Area2D" parent="PillarC1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PillarC1/ActivationArea3"]
+shape = SubResource("CircleShape2D_tmbiy")
+
+[node name="WorldEnvironment3" type="WorldEnvironment" parent="PillarC1"]
+environment = SubResource("Environment_mm6p8")

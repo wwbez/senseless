@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwlyodyl8dj3v"]
+
+[ext_resource type="Texture2D" uid="uid://ca51k8c1wevi0" path="res://Amalgam 1 Sheet.png" id="1_gk77l"]
+[ext_resource type="Texture2D" uid="uid://bi60ijxtl4g3k" path="res://Textbox.png" id="2_7jp84"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2aud"]
+atlas = ExtResource("1_gk77l")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42bl3"]
+atlas = ExtResource("1_gk77l")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eehho"]
+atlas = ExtResource("1_gk77l")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vf64"]
+atlas = ExtResource("1_gk77l")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnayw"]
+atlas = ExtResource("1_gk77l")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7gb8"]
+atlas = ExtResource("1_gk77l")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fifjo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2aud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42bl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eehho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vf64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnayw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7gb8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.9073486e-06, 14.999999)
+scale = Vector2(0.91145843, 0.9296875)
+sprite_frames = SubResource("SpriteFrames_fifjo")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -50.0
+offset_top = 51.0
+offset_right = 117.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 8
+text = "to turn on the lights,
+you must sacrifice your sight
+[press e]
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="Label"]
+show_behind_parent = true
+position = Vector2(56, 20.000002)
+scale = Vector2(0.90625, 1.4804689)
+texture = ExtResource("2_7jp84")
