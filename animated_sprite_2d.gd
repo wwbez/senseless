@@ -1,10 +1,14 @@
 extends Node2D
 
 @export var jumpscare_sound: AudioStream = preload("res://jumpscare (1).wav")
+<<<<<<< HEAD
 @export var next_scene_path: String = "res://path_to_scene.tscn"  # optional scene change
 @export var flash_duration := 0.3
 @export var detection_radius := 65  # distance from player to trigger jumpscare
 
+=======
+@export var next_scene_path: String = "res://newscene.tscn"  # optional scene change
+>>>>>>> 45fc51139a2a658f47b452d7b6c7a5b157a34827
 
 var has_triggered := false  # ensures this NPC only triggers once
 
