@@ -49,7 +49,7 @@ func do_jumpscare() -> void:
 
 	# Flash screen using Tween
 	var tween = create_tween()
-	tween.tween_property(flash_rect, "color", Color(1, 1, 1, 1), flash_duration / 2)
+	tween.tween_property(flash_rect, "color", Color(.3, 0, 0, 1), flash_duration / 2)
 	tween.tween_property(flash_rect, "color", Color(1, 1, 1, 0), flash_duration / 2).set_delay(flash_duration / 2)
 
 	# Increment global jumpscare counter
