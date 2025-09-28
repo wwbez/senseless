@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://sc336sduma2a"]
+[gd_scene load_steps=2 format=3 uid="uid://sc336sduma2a"]
+
+[ext_resource type="AudioStream" uid="uid://cwnttiaq21ea8" path="res://breathingbeat.mp3" id="1_oqlu3"]
 
 [node name="newscene" type="Node2D"]
+
+[node name="Breathingbeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_oqlu3")
+volume_db = 12.729
+autoplay = true
